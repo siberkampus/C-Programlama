@@ -60,11 +60,12 @@ int en_iyi_erkek(struct atlet atletler[]){
 } 
 
 int en_iyi_kadin(struct atlet atletler[]){
-	int i,sure,kontrol=0,index=0;
+	int i,sure,kontrol=0,index;
 	for(i=0;i<4;i++){
 		if((atletler[i].cinsiyet=='k') || (atletler[i].cinsiyet=='K')){ //Kadin kontrolü
 			if(kontrol == 0){
 				sure=saniye(atletler[i]);
+				index=i;
 				kontrol=1;}
 				
 			if(sure>saniye(atletler[i])){
@@ -76,12 +77,13 @@ int en_iyi_kadin(struct atlet atletler[]){
 	return index;
 } 
 int en_iyi_turk(struct atlet atletler[]){
-	int i,sure,kontrol=0,index=0;
+	int i,sure,kontrol=0,index;
 	
 	for(i=0;i<4;i++){
 		if(!  (strcmp(atletler[i].ulke,"turkiye"))){ //Ulke kontrolü
 			if(kontrol == 0){
 				sure=saniye(atletler[i]);
+				index=i;
 				kontrol=1;}
 				
 			if(sure>saniye(atletler[i])){
